@@ -1,8 +1,10 @@
+'use strict'
+
 function Thermostat(){
-  this._default = 20;
-  this._temperature = this._default;
-  this._minimum = 10;
-  this._maximum = 25;
+  this._DEFAULT = 20;
+  this._temperature = this._DEFAULT;
+  this._MINIMUM = 10;
+  this._MAXIMUM = 25;
   this._powerSave = true;
 }
 
@@ -12,50 +14,50 @@ Thermostat.prototype.currentTemperature = function(){
 
 Thermostat.prototype.increaseTempBy = function(degrees = 1){
   if(this._checkMaximum(degrees)){
-    throw new Error("max temp is " + this._maximum);
+    throw new Error("max temp is " + this._MAXIMUM);
   }
   this._temperature = this._temperature + degrees;
 };
 
 Thermostat.prototype.decreaseTempBy = function(degrees = 1){
   if(this._checkMinimum(degrees)){
-    throw new Error("min temp is " + this._minimum);
+    throw new Error("min temp is " + this._MINIMUM);
   }
   this._temperature = this._temperature - degrees;
 };
 
 Thermostat.prototype._checkMinimum = function(degrees){
-   return this._temperature - degrees < this._minimum;
+   return this._temperature - degrees < this._MINIMUM;
 };
 
 Thermostat.prototype.getMinimum = function(){
-  return this._minimum;
+  return this._MINIMUM;
 };
 
 Thermostat.prototype.getMaximum = function(){
-  return this._maximum;
+  return this._MAXIMUM;
 };
 
 Thermostat.prototype.getDefault = function(){
-  return this._default;
+  return this._DEFAULT;
 };
 
 Thermostat.prototype.turnOnPowerSave = function(){
   this._powerSave = true;
-  this._maximum = 25;
+  this._MAXIMUM = 25;
 };
 
 Thermostat.prototype.turnOffPowerSave = function(){
   this._powerSave = false;
-  this._maximum = 32;
+  this._MAXIMUM = 32;
 };
 
 Thermostat.prototype._checkMaximum = function(degrees){
-  return this._temperature + degrees > this._maximum;
+  return this._temperature + degrees > this._MAXIMUM;
 };
 
 Thermostat.prototype.reset = function(){
-  this._temperature = this._default;
+  this._temperature = this._DEFAULT;
 };
 
 Thermostat.prototype.energyUsage = function(){
