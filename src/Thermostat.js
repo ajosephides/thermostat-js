@@ -48,3 +48,7 @@ Thermostat.prototype.turnOffPowerSave = function(){
 Thermostat.prototype._checkMaximum = function(degrees){
   return this._temperature + degrees > this._maximum;
 };
+
+Thermostat.prototype.reset = function(){
+  this._temperature = 20;
+};

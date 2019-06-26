@@ -52,7 +52,7 @@ describe("Thermostat", function() {
   it('will reset to default temperature', function(){
     thermostat.increaseTempBy(4);
     expect(thermostat.currentTemperature()).toEqual(24);
-    thermostat.resest();
+    thermostat.reset();
     expect(thermostat.currentTemperature()).toEqual(20);
   });
 
