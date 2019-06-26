@@ -49,4 +49,11 @@ describe("Thermostat", function() {
     }).toThrowError("max temp is " + thermostat.getMaximum());
   });
 
+  it('will reset to default temperature', function(){
+    thermostat.increaseTempBy(4);
+    expect(thermostat.currentTemperature()).toEqual(24);
+    thermostat.resest();
+    expect(thermostat.currentTemperature()).toEqual(20);
+  });
+
 });
