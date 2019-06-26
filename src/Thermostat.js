@@ -1,5 +1,6 @@
 function Thermostat(){
-  this._temperature = 20;
+  this._default = 20;
+  this._temperature = this._default;
   this._minimum = 10;
   this._maximum = 25;
   this._powerSave = true;
@@ -24,15 +25,19 @@ Thermostat.prototype.decreaseTempBy = function(degrees = 1){
 };
 
 Thermostat.prototype._checkMinimum = function(degrees){
-   return this._temperature - degrees < this._minimum
+   return this._temperature - degrees < this._minimum;
 };
 
 Thermostat.prototype.getMinimum = function(){
-  return this._minimum
+  return this._minimum;
 };
 
 Thermostat.prototype.getMaximum = function(){
-  return this._maximum
+  return this._maximum;
+};
+
+Thermostat.prototype.getDefault = function(){
+  return this._default;
 };
 
 Thermostat.prototype.turnOnPowerSave = function(){
@@ -50,5 +55,5 @@ Thermostat.prototype._checkMaximum = function(degrees){
 };
 
 Thermostat.prototype.reset = function(){
-  this._temperature = 20;
+  this._temperature = this._default;
 };

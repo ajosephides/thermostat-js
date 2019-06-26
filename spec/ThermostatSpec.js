@@ -5,8 +5,8 @@ describe("Thermostat", function() {
     thermostat = new Thermostat();
   });
 
-  it('starts at a temperature of 20', function(){
-    expect(thermostat.currentTemperature()).toBe(20);
+  it('starts at a default temperature of 20', function(){
+    expect(thermostat.currentTemperature()).toEqual(thermostat.getDefault());
   });
 
   it('increases the temperature by 1', function(){
@@ -53,7 +53,7 @@ describe("Thermostat", function() {
     thermostat.increaseTempBy(4);
     expect(thermostat.currentTemperature()).toEqual(24);
     thermostat.reset();
-    expect(thermostat.currentTemperature()).toEqual(20);
+    expect(thermostat.currentTemperature()).toEqual(thermostat.getDefault());
   });
 
 });
