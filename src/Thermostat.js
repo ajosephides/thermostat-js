@@ -5,6 +5,8 @@ function Thermostat(){
   this._temperature = this._DEFAULT;
   this._MINIMUM = 10;
   this._MAXIMUM = 25;
+  this._TEMP_MEDIUM_ENERGY = 18;
+  this._TEMP_HIGH_ENERGY = 25;
   this._powerSave = true;
 }
 
@@ -61,9 +63,9 @@ Thermostat.prototype.reset = function(){
 };
 
 Thermostat.prototype.energyUsage = function(){
-  if(this._temperature < 18){
+  if(this._temperature < this._TEMP_MEDIUM_ENERGY){
     return "low-usage";
-  } else if(this._temperature < 25){
+  } else if(this._temperature < this._TEMP_HIGH_ENERGY){
     return "medium-usage";
   } else {
     return "high-usage";
