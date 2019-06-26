@@ -62,6 +62,14 @@ Thermostat.prototype.reset = function(){
   this._temperature = this._DEFAULT;
 };
 
+Thermostat.prototype.isPowerSave = function(){
+  if(this._powerSave){
+    return "on";
+  } else {
+    return "off";
+  }
+};
+
 Thermostat.prototype.energyUsage = function(){
   if(this._temperature < this._TEMP_MEDIUM_ENERGY){
     return "low-usage";
