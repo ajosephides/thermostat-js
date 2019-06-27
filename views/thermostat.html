@@ -1,6 +1,8 @@
 <script src="../src/Thermostat.js"></script>
 <script src="../public/js/lib/jquery_3.4.1.js"> </script>
 <script src="../src/ThermostatToHtml.js"></script>
+<script src="../src/Weather.js"></script>
+
 
 
 <!DOCTYPE html>
@@ -20,6 +22,15 @@
         <button id="powersaving-on">PSM on</button>
         <button id="powersaving-off">PSM off</button>
       </p>
+    </section>
+    <section>
+      <h1 Current weather: id="current-weather"></h1>
+      <select id="city-pick">
+        <option id="london" value="london">London</option>
+        <option id="toronto" value="toronto">Toronto</option>
+        <option id="copenhagen" value="copenhagen">Copenhagen</option>
+        <option id="paris" value="paris">Paris</option>
+      </select>
     </section>
   </body>
 </html>

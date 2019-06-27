@@ -9,7 +9,7 @@ $(document).ready(function() {
   function updatePowerSave() {
     $('#power-saving-status').text(thermostat.isPowerSave());
   };
-  
+
   updateTemperature();
 
   $('#temperature-up').click(function() {
@@ -40,6 +40,3 @@ $(document).ready(function() {
   });
 
 });
-
-
-
